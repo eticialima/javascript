@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<body>
+        <button onclick="jogar()" id="botao">Tentar adivinhar</button> 
+        <div id="saida">
+                <p>O resultado vai aparecer aqui...</p>
+        </div>
+
+        <script>
+                let res = document.querySelector('div#saida')
+                let computador = 0
+                let jogador = 0
+
+                function sortear() {
+                        let min = 1
+                        let max = 100
+                        let dif = max - min
+                        let aleatorio = Math.random()
+                        
+                        computador = min + Math.trunc(dif * aleatorio)
+                }
+
+                function jogar() {
+                        jogador = Number(window.prompt('Qual é o seu palpite?'))
+                        if (jogador < computador) {
+                                res.innerHTML += `<p>Você falou ${jogador}. Meu número é <strong>MAIOR</strong>!</p>`
+                        } else if (jogador > computador) {
+                                res.innerHTML += `<p>Você falou ${jogador}. Meu número é <strong>MENOR</strong>!</p>`
+                        } else if (jogador == computador) {
+                                res.innerHTML += `<p><strong>PARABÉNS!</strong> Você acertou! Eu tinha sorteado o valor ${computador}!</p>`
+                                document.getElementById('botao').style.visibility = 'hidden'
+                        }
+                }
+        </script>
+</body>
+</html>

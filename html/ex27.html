@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<body>
+        <button onclick="fatorial()" id="botao">click aqui</button> 
+        <div id="saida">
+                <p>O resultado vai aparecer aqui...</p>
+        </div>
+
+        <script>
+               function fatorial() {
+                        let saida = document.getElementById('saida')
+                        let n = Number(document.getElementById('fnum').value)
+
+                        saida.innerHTML += `<h2>Calculando ${n}!</h2>`
+                        let c = n
+                        let fat = 1
+                        while (c > 1) {
+                                saida.innerHTML += `${c} x `
+                                fat *= c 
+                                c--
+                        }
+                        saida.innerHTML += `1 = <strong>${fat.toLocaleString('pt-BR')}</strong>`
+                 }
+        </script>
+</body>
+</html>

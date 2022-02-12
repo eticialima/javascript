@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<body>
+        <button onclick="estacao()" id="botao">click aqui</button> 
+        <div id="saida">
+                <p>O resultado vai aparecer aqui...</p>
+        </div>
+
+        <script>
+                function estacao() { 
+                        let mês = prompt('Digite o mês em extenso (ex: Setembro)')
+                        let saída = document.querySelector('div#saida')
+                        let estação
+                        switch (mês.toUpperCase()) {  
+                                case 'JANEIRO': case 'FEVEREIRO': case 'MARÇO':  
+                                        estação = 'INVERNO'
+                                        break  
+                                case 'ABRIL': case 'MAIO': case 'JUNHO':
+                                        estação = 'PRIMAVERA'
+                                        break
+                                case 'JULHO': case 'AGOSTO': case 'SETEMBRO':
+                                        estação = 'VERÃO'
+                                        break
+                                case 'OUTUBRO': case 'NOVEMBRO': case 'DEZEMBRO':
+                                        estação = 'OUTONO'
+                                        break
+                                default:
+                                        estação = 'INDEFINIDA'
+                                        break
+                        }
+                        saída.innerHTML = `<p>No mês de <mark>${mês}</mark>, estamos na estação <mark><strong>${estação}</strong></mark>.</p>`
+                }
+        </script>
+</body>
+</html>

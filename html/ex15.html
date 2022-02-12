@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<body>
+        <button onclick="calcidade()">Clique para começar</button>
+        <div id="saida">
+                <p>O resultado vai aparecer aqui...</p>
+        </div>
+
+        <script>
+                function calcidade() {
+                        let agora = new Date
+                        let ano = agora.getFullYear()
+
+                        let nasc = Number(window.prompt('Em que ano você nasceu?'))
+                        let idade = ano - nasc
+
+                        let saida = document.getElementById('saida')
+                        saida.innerHTML = `<p>Quem nasceu em ${nasc} vai completar <strong>${idade}</strong> anos em ${ano}.</p>`
+                }
+        </script>
+</body>
+</html>

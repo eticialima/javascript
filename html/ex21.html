@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<body>
+        <button onclick="contar()" id="botao">click aqui</button> 
+        <div id="saida">
+                <p>O resultado vai aparecer aqui...</p>
+        </div>
+
+        <script>
+                function contar() {
+                        let saida = document.getElementById('saida')
+
+                        saida.innerHTML += `<h2>Contando de 1 até 10</h2>`
+
+                        let cont = 1
+                        while (cont <= 10) {
+                                saida.innerHTML += ` ${cont} &#x1F449;`
+                                cont++ // Corresponde a cont = cont + 1
+                        }
+                        saida.innerHTML += ` &#x1F3C1;`
+                }
+        </script>
+</body>
+</html>

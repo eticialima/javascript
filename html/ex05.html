@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercicio 5</title>
+</head>
+
+<body>
+        <div>
+                <h1>Exercicio 5</h1>
+                <button onclick="Calcular();">Calcular</button>
+        </div>
+
+        <div id="resultado">
+                <p>Aqui vai aparecer o resultado... </p>
+        </div>
+
+        <script>
+                 function Calcular() {
+                        let n1 = Number(window.prompt('Digite um número: '))
+                        let n2 = Number(window.prompt('Digite outro número:'))
+                        soma = n1 + n2
+
+                        let res = document.querySelector('div#resultado')
+                        res.innerHTML = `<p>A soma entre <mark>${n1}</mark> + <mark>${n2}</mark> é igual a <strong>${soma}</strong>!</p>`
+                }
+        </script>
+</body>
+
+</html>
